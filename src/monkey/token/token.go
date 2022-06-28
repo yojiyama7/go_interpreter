@@ -1,16 +1,16 @@
 package token
 
-type tokenType string
+type TokenType string
 
 type Token struct {
-	Type 	tokenType
+	Type 	TokenType
 	Literal string
 }
 
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF		= "EOF"
-	
+
 	IDNET = "IDENT"
 	INT	  = "INT"
 
