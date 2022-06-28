@@ -3,10 +3,10 @@ package lexer
 import "monkey/token"
 
 type Lexer struct {
-	input			string
-	position 		int
-	readPosition	int
-	ch				byte
+	input        string
+	position     int
+	readPosition int
+	ch           byte
 }
 
 func New(input string) *Lexer {
@@ -49,11 +49,14 @@ func (l *Lexer) NextToken() token.Token {
 		tok.Type = token.EOF
 		tok.Literal = ""
 	}
+
+	l.readChar()
+	return tok
 }
 
 func newToken(tokenType token.TokenType, ch byte) token.Token {
 	return token.Token{
-		Type: tokenType,
+		Type:    tokenType,
 		Literal: string(ch),
 	}
 }
